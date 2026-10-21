@@ -75,6 +75,13 @@ def get_user_by_username(username):
             return cur.fetchone()
 
 
+def has_users():
+    with get_connection() as conn:
+        with conn.cursor() as cur:
+            cur.execute("SELECT EXISTS (SELECT 1 FROM users) AS has_users")
+            return cur.fetchone()["has_users"]
+
+
 def get_all_users():
     with get_connection() as conn:
         with conn.cursor() as cur:

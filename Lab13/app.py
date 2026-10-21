@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 
-from db import init_db, create_user, get_user_by_username, get_all_users, user_exists
+from db import init_db, create_user, get_user_by_username, get_all_users, has_users, user_exists
 from auth import hash_password, verify_password, validate_username, validate_email, validate_password
 
 st.set_page_config(page_title="Auth App", page_icon="A")
@@ -63,6 +63,8 @@ def signup_page():
 
 def login_page():
     st.title("Login")
+    if not has_users():
+        st.info("No accounts are registered yet. Open the Sign Up tab to create an account before logging in.")
 
     with st.form("login_form"):
         username = st.text_input("Username")
