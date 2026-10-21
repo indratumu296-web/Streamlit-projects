@@ -1,4 +1,4 @@
-# 🚀 Streamlit Lab Projects
+# 🚀 Streamlit Projects
 
 A collection of hands-on Streamlit projects developed while learning AI and Data Application Development using Streamlit. These projects cover Streamlit fundamentals, interactive widgets, data visualization, machine learning integration, API usage, authentication, and deployment. 0
 
